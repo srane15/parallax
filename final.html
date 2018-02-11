@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<title></title>
+		<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="reset.css">
+		<style type="text/css">
+		/*These styles contain basic styles for fomatting along with our animation css*/
+		body {
+			font-size: 16px;
+			font-family: 'Libre Baskerville', serif;
+			font-weight: 400;
+			background: #efefef;
+			/*line-height: 170%;*/
+		}
+
+		/*strong, b {
+			font-weight: 600
+		}
+
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: 300;
+			line-height: 150%;
+		}
+
+		i.fa {
+			color: #333;
+		}
+
+		*, *:before, *:after {
+			box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			-webkit-box-sizing: border-box;
+		}
+
+		//clearfixes
+		.cf:before, .cf:after {
+			content: " ";
+			display: table;
+		}
+
+		.cf:after {
+			clear: both;
+		}*/
+
+		*{
+			box-sizing: border-box;
+		}
+		.main-container {
+			background: #fff;
+			/*max-width: 1000px;*/
+			margin: 25px auto 25px auto;
+			position: relative;
+		}
+
+		.container {
+			position: relative;
+			padding: 25px;
+		}
+
+		/*animation element*/
+		.animation-element {
+			opacity: 0;
+			position: relative;
+		}
+
+		/*animation element sliding left*/
+		.animation-element.slide-left {
+			opacity: 0;
+			-moz-transition: all 500ms linear;
+			-webkit-transition: all 500ms linear;
+			-o-transition: all 500ms linear;
+			transition: all 500ms linear;
+			-moz-transform: translate3d(0px, 100px, 0px);
+			-webkit-transform: translate3d(0px, 100px, 0px);
+			-o-transform: translate(0px, 100px);
+			-ms-transform: translate(0px, 100px);
+			transform: translate3d(0px, 100px, 0px);
+		}
+
+		.animation-element.slide-left2 {
+			opacity: 0;
+			-moz-transition: all 1000ms linear;
+			-webkit-transition: all 1000ms linear;
+			-o-transition: all 1000ms linear;
+			transition: all 1000ms linear;
+			-moz-transform: translate3d(0px, 100px, 0px);
+			-webkit-transform: translate3d(0px, 100px, 0px);
+			-o-transform: translate(0px, 100px);
+			-ms-transform: translate(0px, 100px);
+			transform: translate3d(0px, 100px, 0px);
+		}
+
+		.animation-element.slide-left.in-view {
+			opacity: 1;
+			-moz-transform: translate3d(0px, 0px, 0px);
+			-webkit-transform: translate3d(0px, 0px, 0px);
+			-o-transform: translate(0px, 0px);
+			-ms-transform: translate(0px, 0px);
+			transform: translate3d(0px, 0px, 0px);
+		}
+
+		.animation-element.slide-left2.in-view {
+			opacity: 1;
+			-moz-transform: translate3d(0px, 0px, 0px);
+			-webkit-transform: translate3d(0px, 0px, 0px);
+			-o-transform: translate(0px, 0px);
+			-ms-transform: translate(0px, 0px);
+			transform: translate3d(0px, 0px, 0px);
+		}
+
+		/*animation slide left styled for testimonials*/
+		.animation-element.slide-left.testimonial {
+			float: left;
+			width: 47%;
+			margin: 0% 1.5% 3% 1.5%;
+			background: #F5F5F5;
+			padding: 15px;
+			box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+			border: solid 1px #EAEAEA;
+
+		}
+
+		.animation-element.slide-left.testimonial:hover, .animation-element.slide-left.testimonial:active {
+			box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.25);
+		}
+
+		.animation-element.slide-left.testimonial:nth-of-type(odd) {
+			width: 48.5%;
+			margin: 0% 1.5% 3.0% 0%;
+		}
+
+		.animation-element.slide-left.testimonial:nth-of-type(even) {
+			width: 48.5%;
+			margin: 0% 0% 3.0% 1.5%;
+		}
+
+		.animation-element.slide-left.testimonial .header {
+			float: left;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+
+		.animation-element.slide-left.testimonial .left {
+			float: left;
+			margin-right: 15px;
+		}
+
+		.animation-element.slide-left.testimonial .right {
+			float: left;
+		}
+
+		.animation-element.slide-left.testimonial img {
+			width: 65px;
+			height: 65px;
+			border-radius: 50%;
+			box-shadow: 0px 1px 3px rgba(51, 51, 51, 0.5);
+		}
+
+		.animation-element.slide-left.testimonial h3 {
+			margin: 0px 0px 5px 0px;
+		}
+
+		.animation-element.slide-left.testimonial h4 {
+			margin: 0px 0px 5px 0px;
+		}
+
+		.animation-element.slide-left.testimonial .content {
+			float: left;
+			width: 100%;
+			margin-bottom: 10px;
+		}
+
+		.animation-element.slide-left.testimonial .rating {
+		}
+
+		.animation-element.slide-left.testimonial i {
+			color: #aaa;
+			margin-right: 5px;
+		}
+
+		/*media queries for small devices*/
+		@media screen and (max-width:678px) {
+
+			/*testimonials*/
+			.animation-element.slide-left.testimonial, .animation-element.slide-left.testimonial:nth-of-type(odd), .animation-element.slide-left.testimonial:nth-of-type(even) {
+				width: 100%;
+				margin: 0px 0px 20px 0px;
+			}
+
+			.animation-element.slide-left.testimonial .right, .animation-element.slide-left.testimonial .left, .animation-element.slide-left.testimonial .content, .animation-element.slide-left.testimonial .rating {
+				text-align: center;
+				float: none;
+			}
+
+			.animation-element.slide-left.testimonial img {
+				width: 85px;
+				height: 85px;
+				margin-bottom: 5px;
+			}
+
+		}
+
+		#scroll1 {
+			position: absolute;
+			top: 100px;
+			padding: 20px;
+			width: 300px;
+			height: auto;
+			left: 10%;
+			background-color: #ffffff;
+			z-index: 1;
+			font-size: 12px;
+		}
+
+		#scroll2 {
+			position: absolute;
+			top: 50px;
+			left: 20%;
+			width: 700px;
+			height: 400px;
+		}
+
+		#scroll2 img {
+			width: 100%;
+		}
+
+		.parallax {
+
+			/* The image used */
+			background-image: url("nat.jpg");		    /* Set a specific height */
+			height: 500px;		    /* Create the parallax scrolling effect */
+			background-attachment: fixed;
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: contain;
+		}
+		</style>
+	</head>
+	<body>
+		<!--For our animations to look good, the animated elements need to be able to be scrolled to. For this example I've added dummy content to the top -->
+		<div class="main-container">
+			<div class="container">
+				<h4>What is Lorem Ipsum?</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+			<div class="container">
+				<h2>
+				Our Testimonials <i class="fa fa-comment"></i></h2>
+				<p> We have worked in the industry for 15 years and have provided services to a wide range of clients.</p>
+				<p>Come and see what our clients are saying about our services. </p>
+			</div>
+			<div class="container">
+				<h4>What is Lorem Ipsum?</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+			<div class="container">
+				<h2>
+				Our Testimonials <i class="fa fa-comment"></i></h2>
+				<p> We have worked in the industry for 15 years and have provided services to a wide range of clients.</p>
+				<p>Come and see what our clients are saying about our services. </p>
+			</div>
+			<div class="container cf">
+				
+				<!-- <div class="animation-element slide-left testimonial">
+					<p>test</p>
+				</div>
+				
+				<div class="animation-element slide-left testimonial">
+					<p>test</p>
+				</div> -->
+				
+				<!-- <div style="position: relative;">
+					<div class="parallax"></div>
+				</div> -->
+	
+				<!-- <div class="animation-element slide-left testimonial">
+					
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div>
+				
+				<div class="animation-element slide-left testimonial">
+					
+					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+				</div> -->
+				
+				
+			</div>
+			<div style="position:relative; float:left;width: 100%;" >
+				<div class="parallax">
+					<div class="animation-element slide-left2" id="scroll1">
+						<h4>What is Lorem Ipsum?</h4>
+						<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+					</div>
+					<div class="animation-element slide-left" id="scroll2">
+						<img src="sq2.jpg">
+					</div>
+				</div>
+			</div>
+			
+			<div class="container" style="clear: left;">
+				<h4>What is Lorem Ipsum?</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+			<div class="container">
+				<h2>
+				Our Testimonials <i class="fa fa-comment"></i></h2>
+				<p> We have worked in the industry for 15 years and have provided services to a wide range of clients.</p>
+				<p>Come and see what our clients are saying about our services. </p>
+			</div>
+			<div class="container">
+				<h4>What is Lorem Ipsum?</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+			<div class="container">
+				<h4>What is Lorem Ipsum?</h4>
+				<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+			</div>
+			
+			<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+			<script type="text/javascript">
+			/*Interactivity to determine when an animated element in in view. In view elements trigger our animation*/
+			$(document).ready(function() {
+			    //window and animation items
+			    var animation_elements = $.find('.animation-element');
+			    var web_window = $(window);
+			    //check to see if any animation containers are currently in view
+			    function check_if_in_view() {
+			        //get current window information
+			        var window_height = web_window.height();
+			        var window_top_position = web_window.scrollTop();
+			        var window_bottom_position = (window_top_position + window_height);
+			        //iterate through elements to see if its in view
+			        $.each(animation_elements, function() {
+			            //get the element sinformation
+			            var element = $(this);
+			            var element_height = $(element).outerHeight();
+			            var element_top_position = $(element).offset().top;
+			            var element_bottom_position = (element_top_position + element_height);
+			            //check to see if this current container is visible (its viewable if it exists between the viewable space of the viewport)
+			            if ((element_bottom_position >= window_top_position) && (element_top_position <= window_bottom_position)) {
+			                element.addClass('in-view');
+			            } else {
+			                element.removeClass('in-view');
+			            }
+			        });
+			    }
+			    //on or scroll, detect elements in view
+			    $(window).on('scroll resize', function() {
+			        check_if_in_view()
+			    })
+			    //trigger our scroll event on initial load
+			    $(window).trigger('scroll');
+			});
+			</script>
+		</body>
+	</html>

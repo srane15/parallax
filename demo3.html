@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body {
+		width: 100%;
+		margin: 0 auto;
+		padding: 0px;
+		background-color: #3B0B39;
+		font-family: helvetica;
+		height: 300%;
+	}
+
+	#wrapper {
+		text-align: center;
+		margin: 0 auto;
+		padding: 0px;
+		width: 995px;
+		overflow: hidden;
+	}
+
+	#header_div {
+		border-bottom: 5px solid #D0A9F5;
+		height: 400px;
+	}
+
+	#header_div .effect_label {
+		font-size: 50px;
+		font-weight: bold;
+		color: white;
+	}
+
+	#wrapper .float_div {
+		clear: both;
+		float: left;
+		width: 350px;
+		height: 300px;
+		padding: 10px;
+		box-sizing: border-box;
+		margin-top: 100px;
+		background-color: #D0A9F5;
+		color: #3B0B39;
+		box-shadow: 0px 0px 20px 0px #8A0886;
+		margin-bottom: 100px;
+	}
+
+	#wrapper .float_div h2 {
+		font-size: 30px;
+	}
+
+	img {
+		float: right;
+		width: 350px;
+		height: 300px;
+		margin-top: 100px;
+		box-shadow: 0px 0px 20px 0px #8A0886;
+	}
+
+	#left_right_div {
+		margin-left: -500px;
+	}
+
+	#right_left_img {
+		margin-right: -500px;
+	}
+
+	#fade_div {
+		margin-left: 100px;
+		/*display: none;*/
+	}
+
+	#fade_img {
+		margin-right: 100px;
+		/*display: none;*/
+	}
+
+	#slide_div {
+		margin-left: 100px;
+		/*display: none;*/
+	}
+
+	#slide_img {
+		margin-right: 100px;
+		/*display: none;*/
+	}
+	</style>
+</head>
+<body>
+<div id="wrapper">
+	<div id="header_div">
+		<p class='effect_label'>Slowly Scroll Down To View Effects</p>
+	</div>
+	<div class="float_div" id="left_right_div">
+		<h2>DIV 1</h2>
+		<p>
+			Place Your Div Content Here
+		</p>
+	</div>
+	<img src="images/image1.jpg" id="right_left_img">
+	<div class="float_div" id="fade_div">
+		<h2>DIV 2</h2>
+		<p>
+			Place Your Div Content Here
+		</p>
+	</div>
+	<img src="images/image2.jpg" id="fade_img">
+	<div class="float_div" id="slide_div">
+		<h2>DIV 3</h2>
+		<p>
+			Place Your Div Content Here
+		</p>
+	</div>
+	<img src="images/image3.jpg" id="slide_img">
+
+</div>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		 $(window).scroll(function(){
+			 if ($(window).scrollTop() > 100) 
+			 {
+			  $("#left_right_div").animate({marginLeft:'100px'},900);
+			  $("#right_left_img").animate({marginRight:'100px'},900);
+			 }
+			 if ($(window).scrollTop() > 700) 
+			 {
+			  $("#fade_div").fadeIn(2000);
+			  $("#fade_img").fadeIn(2000);
+			 }
+			 if ($(window).scrollTop() > 1300) 
+			 {
+			  $("#slide_div").slideDown(500);
+			  $("#slide_img").slideDown(500);
+			 }
+		 });
+	});
+</script>
+</body>
+</html>

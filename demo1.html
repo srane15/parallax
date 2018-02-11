@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Parallax</title>
+	<link href="https://fonts.googleapis.com/css?family=Libre+Baskerville" rel="stylesheet">
+
+	<style type="text/css">
+		body{
+			font-family: 'Libre Baskerville', serif;
+		}
+
+		#scroll1{
+			position: absolute;
+			top: 400px;
+			padding: 20px;
+			width: 300px;
+			height: auto;
+			left: 10%;
+			background-color: #ffffff;
+			z-index: 1;
+			font-size: 12px;
+		}
+		#scroll2{
+			position: absolute;
+			top: 300px;
+			left: 20%;
+			width: 600px;
+			height: 400px;
+		}
+
+		#scroll2 img{
+			width: 100%;
+		}
+		
+		.parallax { 
+
+		    /* The image used */
+		    background-image: url("nat.jpg");
+
+		    /* Set a specific height */
+		    height: 500px; 
+
+		    /* Create the parallax scrolling effect */
+		    background-attachment: fixed;
+		    background-position: center;
+		    background-repeat: no-repeat;
+		    background-size: contain;
+		}
+	</style>
+
+</head>
+<body>
+<h4>What is Lorem Ipsum?</h4>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<div style="width:auto; height: 200px;background-color: #ddd;margin-bottom: 20px;"></div>
+
+<div style="position:relative;">
+<div class="parallax">
+	
+	<div class="test" id="scroll1">
+		<h4>What is Lorem Ipsum?</h4>
+		<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+	</div>
+	<div class="test" id="scroll2">
+		<img src="sq2.jpg">
+	</div>
+	
+</div>
+</div>
+
+<h4>What is Lorem Ipsum?</h4>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<div class="parallax"></div>
+<h4>What is Lorem Ipsum?</h4>
+	<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$(window).scroll(function(){
+			if ($(window).scrollTop() > 200) 
+			{
+				$("#scroll1").animate({top:'100px'},1000);
+				$("#scroll2").animate({top:'50px'},1000);
+			}
+
+			
+
+		});
+		if ($(window).scrollTop() < 100) 
+			{
+				$("#scroll1").animate({top:'400px'},1000);
+				$("#scroll2").animate({top:'300px'},1000);
+			}
+	});
+
+
+</script>
+</body>
+</html>
